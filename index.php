@@ -1,6 +1,16 @@
 <?php
-header("Content-Type: application/json");
-// include "config.php";
+
+header('Content-Type: application/json');
+$expenses = []; 
+include "api/get_expense_list.php";
+echo json_encode($expenses, JSON_PRETTY_PRINT);
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+
+
+
 $config_path = realpath("config.php");
 if (!$config_path) {
     die("Config file not found!");
