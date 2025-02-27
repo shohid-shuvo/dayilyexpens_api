@@ -1,4 +1,9 @@
 <?php
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 include __DIR__ . "/../config.php"; // Database connection
 
 // Check if ID is provided in the query string
